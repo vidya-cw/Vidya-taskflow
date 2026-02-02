@@ -87,6 +87,7 @@ export const getColumnDefs = (): ColDef<UserProps>[] => {
 			field: 'dob.date',
 			headerName: 'DOB',
 			filter: 'agDateColumnFilter',
+			valueGetter: (p) => new Date(p.data?.dob.date ?? 0),
 			valueFormatter: (p) => new Date(p.value).toLocaleDateString(),
 			cellStyle: getCellStyle,
 		},
